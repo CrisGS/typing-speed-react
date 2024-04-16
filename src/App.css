@@ -1,0 +1,12 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 80%;
+  height: 80%;
+  padding: 10px;
+  background: linear-gradient(45deg, rgb(65 65 65 / 85%), rgb(152 152 152 / 59%), rgb(65 65 65 / 85%));
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgb(0 0 0 / 60%);
+}
