@@ -1,20 +1,22 @@
 import { useState, useEffect } from 'react';
 import '../assets/timer.css'
 
-export default function Timer() {
+export default function Timer({ isTimerRunning }) {
     const [seconds, setSeconds] = useState(60);
 
     useEffect(() => {
-        const interval = setInterval(() => {
-            if (seconds === 55) {
-                clearInterval(interval);
-            } else {
-                setSeconds(seconds => seconds - 1);
-            }
-        }, 1000);
-        // Curățăm intervalul la dezactivarea componentei pentru a evita memory leak-uri
+        let interval;
+        if (isTimerRunning) {
+            interval = setInterval(() => {
+                if (seconds === 0) {
+                    clearInterval(interval);
+                } else {
+                    setSeconds(seconds => seconds - 1);
+                }
+            }, 1000);
+        }
         return () => clearInterval(interval);
-      }, [seconds]);
+    }, [seconds, isTimerRunning]);
 
     return (
         <div className="container-timer">
