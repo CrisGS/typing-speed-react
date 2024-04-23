@@ -13,7 +13,7 @@ export default function InputText({ startTimer }) {
 
     return (
         <div className="typing-area">
-          <textarea type="text" id="typeText" className="text" onInput={handleInput}></textarea>
+          <textarea type="text" id="typeText" className="text" onInput={handleInput} placeholder='Start typing to begin the test...'></textarea>
         </div>
     );
 }
